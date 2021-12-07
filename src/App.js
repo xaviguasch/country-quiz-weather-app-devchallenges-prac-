@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Main from './components/Main'
+import SinglesContainer from './components/SinglesContainer'
 
 import './App.css'
 
@@ -41,6 +42,8 @@ function App() {
     <div className='App'>
       <h1>Weather App</h1>
       {weather ? <Main weatherData={weather} /> : <h2>Loading data...</h2>}
+
+      {weather && <SinglesContainer weatherData={weather} />}
     </div>
   )
 }
