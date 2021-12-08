@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Main from './components/Main'
 import SinglesContainer from './components/SinglesContainer'
+import DailiesContainer from './components/DailiesContainer'
 
 import './App.css'
 
@@ -41,9 +42,13 @@ function App() {
   return (
     <div className='App'>
       <h1>Weather App</h1>
-      {weather ? <Main weatherData={weather} /> : <h2>Loading data...</h2>}
-
-      {weather && <SinglesContainer weatherData={weather} />}
+      {weather && (
+        <div>
+          <Main weatherData={weather} /> : <h2>Loading data...</h2>
+          <SinglesContainer weatherData={weather} />
+          <DailiesContainer weatherArr={weather} />
+        </div>
+      )}
     </div>
   )
 }

@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './Main.css'
-
 import Snow from '../assets/Snow.png'
 import Sleet from '../assets/Sleet.png'
 import Hail from '../assets/Hail.png'
@@ -13,15 +11,33 @@ import HeavyCloud from '../assets/HeavyCloud.png'
 import LightCloud from '../assets/LightCloud.png'
 import Clear from '../assets/Clear.png'
 
-const Main = ({ weatherData }) => {
-  const { title } = weatherData
+import './Daily.css'
 
-  const { weather_state_name, created, weather_state_abbr } =
-    weatherData.consolidated_weather[0]
+const Daily = ({ data }) => {
+  const applicableDate = new Date(data.applicable_date)
+  const applDateTruncStr = applicableDate.toString().slice(0, 11)
 
-  const currTemp = Math.round(weatherData.consolidated_weather[0].the_temp)
+  const today = new Date()
+  const tomorrow = new Date()
 
-  const formatedDate = new Date(created).toGMTString().slice(0, 11)
+  tomorrow.setDate(today.getDate() + 1)
+
+  const tomorrowDateTruncStr = tomorrow.toString().slice(0, 11)
+
+  let displayDate = ''
+
+  if (applDateTruncStr === tomorrowDateTruncStr) {
+    displayDate = 'Tomorrow'
+  } else {
+    displayDate = applDateTruncStr
+  }
+
+  //
+
+  const { weather_state_abbr, max_temp, min_temp } = data
+
+  const maxTempRound = Math.round(max_temp)
+  const minTempRound = Math.round(min_temp)
 
   let weatherPng = ''
 
@@ -58,14 +74,15 @@ const Main = ({ weatherData }) => {
   }
 
   return (
-    <div className='Main'>
+    <div>
+      <h2>Daily component</h2>
       <img src={weatherPng} alt='' />
-      <h2>{currTemp} ºC</h2>
-      <p>{weather_state_name}</p>
-      <p>Today · {formatedDate}</p>
-      <p>{title}</p>
+
+      <p>{displayDate}</p>
+      <p>{maxTempRound}ºC</p>
+      <p>{minTempRound}ºC</p>
     </div>
   )
 }
 
-export default Main
+export default Daily
