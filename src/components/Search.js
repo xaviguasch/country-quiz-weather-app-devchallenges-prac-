@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './Search.css'
 
-const Search = ({ onSearchSubmit }) => {
+const Search = ({ onSearchSubmit, onCityClick, cities }) => {
   const [inputSearch, setInputSearch] = useState('')
 
   const handleCityChange = (e) => {
@@ -14,6 +14,10 @@ const Search = ({ onSearchSubmit }) => {
     onSearchSubmit(inputSearch)
 
     setInputSearch('')
+  }
+
+  const handleCityBtnClick = (e) => {
+    onCityClick(e.target.innerText)
   }
 
   return (
@@ -32,6 +36,16 @@ const Search = ({ onSearchSubmit }) => {
 
         <button>Search</button>
       </form>
+
+      <ul>
+        {cities.length > 0 &&
+          cities.map((city) => (
+            <li key={city}>
+              {' '}
+              <button onClick={handleCityBtnClick}>{city}</button>
+            </li>
+          ))}
+      </ul>
     </div>
   )
 }

@@ -9,6 +9,7 @@ import './App.css'
 
 function App() {
   const [weather, setWeather] = useState()
+  const [searchedCities, setSearchedCites] = useState([])
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
@@ -36,11 +37,16 @@ function App() {
       .then((res) => res.json())
       .then((data) => data[0].woeid)
       .then((woeid) => {
+        setSearchedCites((prevState) => [...prevState, city])
         fetch(
           `https://secret-ocean-49799.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
         )
           .then((res) => res.json())
           .then((data) => setWeather(data))
+      })
+      .catch((error) => {
+        // Needs better error handling, but now if the searched city doesn't exist, at least the app doesn't crash anymore
+        console.log(error.message)
       })
   }
 
@@ -59,9 +65,17 @@ function App() {
     getWeatherByCity(city)
   }
 
+  const onCityClick = (city) => {
+    getWeatherByCity(city)
+  }
+
   return (
     <div className='App'>
-      <Search onSearchSubmit={onSearchSubmit} />
+      <Search
+        onSearchSubmit={onSearchSubmit}
+        cities={searchedCities}
+        onCityClick={onCityClick}
+      />
       {weather && (
         <div>
           <Main weatherData={weather} /> : <h2>Loading data...</h2>
