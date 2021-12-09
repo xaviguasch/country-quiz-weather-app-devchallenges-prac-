@@ -104,7 +104,7 @@ function App() {
           <DailiesContainer weatherArr={weather} />
         </div>
       ) : (
-        <h2>loading data...</h2>
+        <h2>loading local weather data...</h2>
       )}
     </div>
   )
