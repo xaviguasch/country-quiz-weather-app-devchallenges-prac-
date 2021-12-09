@@ -15,6 +15,14 @@ function App() {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
   }, [])
 
+  const getDataFromAPI = (woeid) => {
+    fetch(
+      `https://secret-ocean-49799.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
+    )
+      .then((res) => res.json())
+      .then((data) => setWeather(data))
+  }
+
   const getWeather = (lat, lon) => {
     fetch(
       `https://secret-ocean-49799.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${lon}`
@@ -22,11 +30,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => data[0].woeid)
       .then((woeid) => {
-        fetch(
-          `https://secret-ocean-49799.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
-        )
-          .then((res) => res.json())
-          .then((data) => setWeather(data))
+        getDataFromAPI(woeid)
       })
   }
 
@@ -37,12 +41,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => data[0].woeid)
       .then((woeid) => {
-        setSearchedCites((prevState) => [...prevState, city])
-        fetch(
-          `https://secret-ocean-49799.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`
-        )
-          .then((res) => res.json())
-          .then((data) => setWeather(data))
+        getDataFromAPI(woeid)
       })
       .catch((error) => {
         // Needs better error handling, but now if the searched city doesn't exist, at least the app doesn't crash anymore
@@ -63,6 +62,11 @@ function App() {
 
   const onSearchSubmit = (city) => {
     getWeatherByCity(city)
+
+    // Avoids adding an already searched city to the list of searched cities
+    if (!searchedCities.includes(city)) {
+      setSearchedCites((prevState) => [...prevState, city])
+    }
   }
 
   const onCityClick = (city) => {
@@ -71,13 +75,13 @@ function App() {
 
   return (
     <div className='App'>
-      <Search
-        onSearchSubmit={onSearchSubmit}
-        cities={searchedCities}
-        onCityClick={onCityClick}
-      />
       {weather && (
         <div>
+          <Search
+            onSearchSubmit={onSearchSubmit}
+            cities={searchedCities}
+            onCityClick={onCityClick}
+          />
           <Main weatherData={weather} /> : <h2>Loading data...</h2>
           <SinglesContainer weatherData={weather} />
           <DailiesContainer weatherArr={weather} />
