@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './Search.css'
 
-const Search = ({ onSearchSubmit, onCityClick, cities }) => {
+const Search = ({ onSearchSubmit, onCityClick, onCloseSearchClick, cities }) => {
   const [inputSearch, setInputSearch] = useState('')
 
   const handleCityChange = (e) => {
@@ -20,9 +20,14 @@ const Search = ({ onSearchSubmit, onCityClick, cities }) => {
     onCityClick(e.target.innerText)
   }
 
+  const handleCloseSearchClick = () => {
+    onCloseSearchClick()
+  }
+
   return (
     <div className='Search'>
       <h2>Search components</h2>
+      <button onClick={handleCloseSearchClick}>X</button>
 
       <form onSubmit={handleFormSubmit}>
         <input

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Search from './components/Search'
-import Main from './components/Main'
+import DailyMain from './components/DailyMain'
 import SinglesContainer from './components/SinglesContainer'
 import DailiesContainer from './components/DailiesContainer'
 
@@ -10,6 +10,7 @@ import './App.css'
 function App() {
   const [weather, setWeather] = useState()
   const [searchedCities, setSearchedCites] = useState([])
+  const [showSearch, setShowSearch] = useState(false)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
@@ -76,19 +77,34 @@ function App() {
     getWeatherByCity(city)
   }
 
+  const onSearchClick = () => {
+    setShowSearch(true)
+  }
+
+  const onCloseSearchClick = () => {
+    setShowSearch(false)
+  }
+
   return (
     <div className='App'>
-      {weather && (
+      {weather ? (
         <div>
-          <Search
-            onSearchSubmit={onSearchSubmit}
-            cities={searchedCities}
-            onCityClick={onCityClick}
-          />
-          <Main weatherData={weather} /> : <h2>Loading data...</h2>
+          {showSearch && (
+            <Search
+              onSearchSubmit={onSearchSubmit}
+              cities={searchedCities}
+              onCityClick={onCityClick}
+              onCloseSearchClick={onCloseSearchClick}
+            />
+          )}
+          {!showSearch && (
+            <DailyMain weatherData={weather} onSearchClick={onSearchClick} />
+          )}
           <SinglesContainer weatherData={weather} />
           <DailiesContainer weatherArr={weather} />
         </div>
+      ) : (
+        <h2>loading data...</h2>
       )}
     </div>
   )

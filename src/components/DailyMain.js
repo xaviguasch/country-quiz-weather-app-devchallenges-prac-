@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Main.css'
+import './DailyMain.css'
 
 import Snow from '../assets/Snow.png'
 import Sleet from '../assets/Sleet.png'
@@ -13,7 +13,7 @@ import HeavyCloud from '../assets/HeavyCloud.png'
 import LightCloud from '../assets/LightCloud.png'
 import Clear from '../assets/Clear.png'
 
-const Main = ({ weatherData }) => {
+const DailyMain = ({ weatherData, onSearchClick }) => {
   const { title } = weatherData
 
   const { weather_state_name, created, weather_state_abbr } =
@@ -24,6 +24,10 @@ const Main = ({ weatherData }) => {
   const formatedDate = new Date(created).toGMTString().slice(0, 11)
 
   let weatherPng = ''
+
+  const handleSearchClick = () => {
+    onSearchClick()
+  }
 
   switch (weather_state_abbr) {
     case 'sn':
@@ -58,7 +62,8 @@ const Main = ({ weatherData }) => {
   }
 
   return (
-    <div className='Main'>
+    <div className='DailyMain'>
+      <button onClick={handleSearchClick}>Search for places</button>
       <img src={weatherPng} alt='' />
       <h2>{currTemp} ºC</h2>
       <p>{weather_state_name}</p>
@@ -68,4 +73,4 @@ const Main = ({ weatherData }) => {
   )
 }
 
-export default Main
+export default DailyMain
