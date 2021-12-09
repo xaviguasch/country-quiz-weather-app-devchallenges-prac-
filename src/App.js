@@ -42,6 +42,14 @@ function App() {
       .then((data) => data[0].woeid)
       .then((woeid) => {
         getDataFromAPI(woeid)
+
+        // Avoids adding a non-existent city to the list of searches cities
+        if (woeid) {
+          // Avoids adding an already searched city to the list of searched cities
+          if (!searchedCities.includes(city)) {
+            setSearchedCites((prevState) => [...prevState, city])
+          }
+        }
       })
       .catch((error) => {
         // Needs better error handling, but now if the searched city doesn't exist, at least the app doesn't crash anymore
@@ -62,11 +70,6 @@ function App() {
 
   const onSearchSubmit = (city) => {
     getWeatherByCity(city)
-
-    // Avoids adding an already searched city to the list of searched cities
-    if (!searchedCities.includes(city)) {
-      setSearchedCites((prevState) => [...prevState, city])
-    }
   }
 
   const onCityClick = (city) => {
