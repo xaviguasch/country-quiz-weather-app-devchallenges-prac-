@@ -76,13 +76,13 @@ const Daily = ({ data }) => {
   return (
     <div className='Daily'>
       <div className='Daily__upper'>
-        <p>{displayDate}</p>
+        <p className='Daily__date'>{displayDate}</p>
         <img className='Daily__graphic' src={weatherPng} alt='' />
       </div>
 
       <div className='Daily__lower'>
-        <span>{maxTempRound}ºC</span>
-        <span>{minTempRound}ºC</span>
+        <span className='Daily__max'>{maxTempRound}ºC</span>
+        <span className='Daily__min'>{minTempRound}ºC</span>
       </div>
     </div>
   )

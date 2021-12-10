@@ -16,24 +16,27 @@ const SinglesContainer = ({ weatherData }) => {
 
   return (
     <div className='SinglesContainer'>
-      <h3>Today's Highlights</h3>
-      <SingleDataItem
-        item='Wind status'
-        firstMeasure={truncWindDirection}
-        additional='mph'
-        wind_direction_compass={wind_direction_compass}
-      />
-      <SingleDataItem item='Humidity' firstMeasure={humidity} additional='%' />
-      <SingleDataItem
-        item='Visibility'
-        firstMeasure={truncatedVisibility}
-        additional=' miles'
-      />
-      <SingleDataItem
-        item='Air Pressure'
-        firstMeasure={truncatedAirPressure}
-        additional=' mb'
-      />
+      <h3 className='highlights-title'>Today's Highlights</h3>
+
+      <div className='sc__container'>
+        <SingleDataItem
+          item='Wind status'
+          firstMeasure={truncWindDirection}
+          additional='mph'
+          wind_direction_compass={wind_direction_compass}
+        />
+        <SingleDataItem item='Humidity' firstMeasure={humidity} additional='%' />
+        <SingleDataItem
+          item='Visibility'
+          firstMeasure={truncatedVisibility}
+          units='miles'
+        />
+        <SingleDataItem
+          item='Air Pressure'
+          firstMeasure={truncatedAirPressure}
+          units=' mb'
+        />
+      </div>
     </div>
   )
 }

@@ -108,6 +108,36 @@ ul {
   font-weight: var(--fw-semi-bold);
 }
 
+.Daily__date,
+.Daily__max {
+  color: var(--clr-grey-1-text);
+}
+
+.Daily__min {
+  color: var(--clr-grey-2-text);
+}
+
+.highlights-title {
+  color: var(--clr-grey-1-text);
+  font-size: var(--fs-24);
+  font-weight: var(--fw-bold);
+}
+
+.sdi__text {
+  color: var(--clr-grey-1-text);
+}
+
+.sdi__units__fm {
+  color: var(--clr-grey-1-text);
+  font-size: var(--fs-64);
+  font-weight: var(--fw-bold);
+}
+
+.sdi__units__additional {
+  color: var(--clr-grey-1-text);
+  font-size: var(--fs-32);
+}
+
 /* ================== */
 /* Buttons & inputs */
 /* ================== */

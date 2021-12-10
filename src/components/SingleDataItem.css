@@ -1,0 +1,17 @@
+.SingleDataItem {
+  background: var(--clr-greyish-blue-bg);
+
+  padding: 1.375em 0 2.375em;
+
+  width: 100%;
+}
+
+.sdi__units {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sdi__units__special {
+  margin-left: 0.5em;
+}
