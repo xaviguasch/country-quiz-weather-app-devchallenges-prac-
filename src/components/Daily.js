@@ -74,13 +74,16 @@ const Daily = ({ data }) => {
   }
 
   return (
-    <div>
-      <h2>Daily component</h2>
-      <img src={weatherPng} alt='' />
+    <div className='Daily'>
+      <div className='Daily__upper'>
+        <p>{displayDate}</p>
+        <img className='Daily__graphic' src={weatherPng} alt='' />
+      </div>
 
-      <p>{displayDate}</p>
-      <p>{maxTempRound}ºC</p>
-      <p>{minTempRound}ºC</p>
+      <div className='Daily__lower'>
+        <span>{maxTempRound}ºC</span>
+        <span>{minTempRound}ºC</span>
+      </div>
     </div>
   )
 }

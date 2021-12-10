@@ -1,0 +1,30 @@
+.Daily {
+  background: var(--clr-greyish-blue-bg);
+
+  padding: 1.125em 0.85em;
+
+  height: 177px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Daily__upper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.Daily__graphic {
+  max-width: 67px;
+}
+
+.Daily__lower {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}

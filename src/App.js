@@ -100,8 +100,8 @@ function App() {
           {!showSearch && (
             <DailyMain weatherData={weather} onSearchClick={onSearchClick} />
           )}
-          <SinglesContainer weatherData={weather} />
           <DailiesContainer weatherArr={weather} />
+          <SinglesContainer weatherData={weather} />
         </div>
       ) : (
         <h2>loading local weather data...</h2>

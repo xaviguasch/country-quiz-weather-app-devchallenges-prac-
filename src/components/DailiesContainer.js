@@ -9,13 +9,13 @@ const DailiesContainer = ({ weatherArr }) => {
 
   console.log(newWeatherArr)
   return (
-    <div className='DailiesContainer'>
-      <h3>Dailies Container</h3>
-
+    <ul className='DailiesContainer'>
       {newWeatherArr.map((dailyData) => (
-        <Daily key={dailyData.id} data={dailyData} />
+        <li key={dailyData.id}>
+          <Daily data={dailyData} />
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

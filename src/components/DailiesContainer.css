@@ -1,3 +1,9 @@
 .DailiesContainer {
-  background: grey;
+  padding: 3.25em 3.375em;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 1.625em;
+  grid-row-gap: 2em;
 }
