@@ -14,10 +14,12 @@ const Search = ({ onSearchSubmit, onCityClick, onCloseSearchClick, cities }) => 
     onSearchSubmit(inputSearch)
 
     setInputSearch('')
+    onCloseSearchClick()
   }
 
   const handleCityBtnClick = (e) => {
     onCityClick(e.target.innerText)
+    onCloseSearchClick()
   }
 
   const handleCloseSearchClick = () => {

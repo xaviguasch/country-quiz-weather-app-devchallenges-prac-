@@ -62,8 +62,12 @@ const DailyMain = ({ weatherData, onSearchClick }) => {
   }
 
   return (
-    <div className='DailyMain'>
-      <button onClick={handleSearchClick}>Search for places</button>
+    <div className='DailyMain container'>
+      <div className='btns--area'>
+        <button className='btn btn--search' onClick={handleSearchClick}>
+          Search for places
+        </button>
+      </div>
       <img src={weatherPng} alt='' />
       <h2>{currTemp} ºC</h2>
       <p>{weather_state_name}</p>

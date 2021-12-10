@@ -1,4 +1,12 @@
 .DailyMain {
-  background: hsla(234, 32%, 17%, 1);
+  background: url('../assets/Cloud-background.png') no-repeat var(--clr-greyish-blue-bg);
+  background-position: top;
   color: white;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+
+  height: 100vh;
+}
+
+.btns--area {
+  display: flex;
 }

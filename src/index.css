@@ -61,7 +61,8 @@
 }
 
 body {
-  color: var(--clr-grey-1-text);
+  background: var(--clr-deep-dark-blue-bg);
+  color: var(--clr-grey-3-text);
   font-family: var(--ff-main);
   font-size: var(--fs-16);
   font-weight: var(--fw-medium);
@@ -81,3 +82,21 @@ ul {
 /* ================== */
 /* Typography */
 /* ================== */
+
+/* ================== */
+/* Buttons & inputs */
+/* ================== */
+.btn {
+  cursor: pointer;
+  color: var(--clr-grey-1-text);
+}
+
+.btn--search {
+}
+
+/* ================== */
+/* Utility styles */
+/* ================== */
+.container {
+  padding: 1.125em 0.75em;
+}
