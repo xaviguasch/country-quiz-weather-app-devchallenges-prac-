@@ -47,6 +47,9 @@
   --fs-72: 4.5rem;
   --fs-80: 5rem;
   --fs-100: 6.25em;
+  --fs-116: 7.25em;
+  --fs-132: 8.25em;
+  --fs-144: 9rem;
 
   /* Text */
   --clr-grey-1-text: hsla(240, 9%, 91%, 1);
@@ -58,6 +61,7 @@
   /* Backgrounds */
   --clr-greyish-blue-bg: hsla(234, 32%, 17%, 1);
   --clr-deep-dark-blue-bg: hsla(248, 35%, 8%, 1);
+  --clr-asphalt-bg: hsla(230, 5%, 45%, 1);
 }
 
 body {
@@ -83,15 +87,41 @@ ul {
 /* Typography */
 /* ================== */
 
+.main-content__temp {
+  font-size: var(--fs-132);
+  font-weight: var(--fw-medium);
+  color: var(--clr-grey-1-text);
+}
+
+.main-content__unit {
+  font-size: var(--fs-48);
+  color: var(--clr-grey-2-text);
+}
+
+.main-content__name {
+  font-size: var(--fs-36);
+  font-weight: var(--fw-semi-bold);
+}
+
+.main-content__location__text {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-semi-bold);
+}
+
 /* ================== */
 /* Buttons & inputs */
 /* ================== */
 .btn {
   cursor: pointer;
   color: var(--clr-grey-1-text);
+  font-size: var(--fs-10);
+  font-family: inherit;
+  font-weight: var(--fw-medium);
 }
 
 .btn--search {
+  background: var(--clr-asphalt-bg);
+  padding: 0.575em 0.875em;
 }
 
 /* ================== */

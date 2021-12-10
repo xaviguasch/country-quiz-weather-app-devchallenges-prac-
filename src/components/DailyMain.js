@@ -68,11 +68,23 @@ const DailyMain = ({ weatherData, onSearchClick }) => {
           Search for places
         </button>
       </div>
-      <img src={weatherPng} alt='' />
-      <h2>{currTemp} ºC</h2>
-      <p>{weather_state_name}</p>
-      <p>Today · {formatedDate}</p>
-      <p>{title}</p>
+      <div className='main-content'>
+        <img className='main-content__img' src={weatherPng} alt='' />
+        <h2 className='main-content__temp'>
+          {currTemp}
+          <span className='main-content__unit'>ºC</span>
+        </h2>
+        <p className='main-content__name'>{weather_state_name}</p>
+        <p className='main-content__date'>
+          <span>Today</span>
+          <span>·</span>
+          <span>{formatedDate}</span>
+        </p>
+        <p className='main-content__location'>
+          <span class='material-icons-round'>place</span>
+          <span className='main-content__location__text'>{title}</span>
+        </p>
+      </div>
     </div>
   )
 }
