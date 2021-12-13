@@ -28,11 +28,15 @@ const Search = ({ onSearchSubmit, onCityClick, onCloseSearchClick, cities }) => 
 
   return (
     <div className='Search'>
-      <h2>Search components</h2>
-      <button onClick={handleCloseSearchClick}>X</button>
+      <div className='Search__btn-area'>
+        <button className='btn btn--close' onClick={handleCloseSearchClick}>
+          <span class='material-icons-round'>close</span>
+        </button>
+      </div>
 
-      <form onSubmit={handleFormSubmit}>
+      <form className='form-search' onSubmit={handleFormSubmit}>
         <input
+          className='input-search'
           type='text'
           value={inputSearch}
           name=''
@@ -41,7 +45,9 @@ const Search = ({ onSearchSubmit, onCityClick, onCloseSearchClick, cities }) => 
           onChange={handleCityChange}
         />
 
-        <button>Search</button>
+        <span class='material-icons-round form-search__icon'>search</span>
+
+        <button className='btn btn--form'>Search</button>
       </form>
 
       <ul>

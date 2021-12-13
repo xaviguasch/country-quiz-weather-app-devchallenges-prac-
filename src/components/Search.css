@@ -1,3 +1,39 @@
 .Search {
-  background: grey;
+  background: var(--clr-greyish-blue-bg);
+
+  width: 100%;
+  height: 100vh;
+
+  padding: 1em 0.75em;
+}
+
+.Search__btn-area {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.form-search {
+  margin-top: 1.75em;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+
+  position: relative;
+}
+
+.input-search {
+  flex: 3;
+}
+
+.btn--form {
+  flex: 1;
+}
+
+.form-search__icon {
+  position: absolute;
+  top: 13px;
+  left: 15px;
 }

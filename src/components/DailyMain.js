@@ -64,7 +64,7 @@ const DailyMain = ({ weatherData, onSearchClick }) => {
   return (
     <div className='DailyMain container'>
       <div className='btns--area'>
-        <button className='btn btn--search' onClick={handleSearchClick}>
+        <button className='btn btn--search-for-places' onClick={handleSearchClick}>
           Search for places
         </button>
       </div>

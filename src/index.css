@@ -55,10 +55,12 @@
   --clr-grey-1-text: hsla(240, 9%, 91%, 1);
   --clr-grey-2-text: hsla(243, 10%, 66%, 1);
   --clr-grey-3-text: hsla(245, 11%, 57%, 1);
+  --clr-grey-placeholder: hsla(231, 9%, 42%, 1);
 
   --clr-white-text: hsla(0, 0%, 95%, 1);
 
   --clr-yellow: hsla(53, 100%, 70%, 1);
+  --clr-sea-blue: hsla(236, 80%, 57%, 1);
 
   /* Backgrounds */
   --clr-greyish-blue-bg: hsla(234, 32%, 17%, 1);
@@ -167,15 +169,41 @@ ul {
 /* ================== */
 .btn {
   cursor: pointer;
-  color: var(--clr-grey-1-text);
   font-size: var(--fs-10);
   font-family: inherit;
   font-weight: var(--fw-medium);
 }
 
-.btn--search {
+.btn--search-for-places {
   background: var(--clr-asphalt-bg);
+  color: var(--clr-grey-1-text);
   padding: 0.575em 0.875em;
+}
+
+.btn--close {
+  font-size: var(--fs-20);
+  background: transparent;
+  border: none;
+  color: var(--clr-grey-1-text);
+}
+
+.btn--form {
+  background: var(--clr-sea-blue);
+  border: 1px solid var(--clr-sea-blue);
+  font-size: var(--fs-16);
+  color: var(--clr-grey-1-text);
+  font-weight: var(--fw-semi-bold);
+
+  padding: 0.875em 0.25em;
+}
+
+.input-search {
+  color: var(--clr-grey-placeholder);
+  border: 1px solid var(--clr-grey-1-text);
+  background: transparent;
+  padding-left: 3.875em;
+  font-family: var(--ff-main);
+  font-size: var(--fs-16);
 }
 
 /* ================== */
