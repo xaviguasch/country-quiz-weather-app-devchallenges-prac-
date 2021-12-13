@@ -50,12 +50,15 @@ const Search = ({ onSearchSubmit, onCityClick, onCloseSearchClick, cities }) => 
         <button className='btn btn--form'>Search</button>
       </form>
 
-      <ul>
+      <ul className='searched-cities'>
         {cities.length > 0 &&
           cities.map((city) => (
             <li key={city}>
               {' '}
-              <button onClick={handleCityBtnClick}>{city}</button>
+              <button className='btn btn--city' onClick={handleCityBtnClick}>
+                <span>{city}</span>
+                <span class='material-icons-round'>chevron_right</span>
+              </button>
             </li>
           ))}
       </ul>

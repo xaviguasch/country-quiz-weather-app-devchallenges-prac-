@@ -197,6 +197,29 @@ ul {
   padding: 0.875em 0.25em;
 }
 
+.btn--city {
+  font-size: var(--fs-16);
+  text-transform: capitalize;
+  width: 100%;
+  color: var(--clr-grey-1-text);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 1.25em 0.75em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn--city:hover,
+.btn--city:focus {
+  border: 1px solid var(--clr-asphalt-bg);
+}
+.btn--city:hover .material-icons-round,
+.btn--city:focus .material-icons-round {
+  display: block;
+}
+
 .input-search {
   color: var(--clr-grey-placeholder);
   border: 1px solid var(--clr-grey-1-text);

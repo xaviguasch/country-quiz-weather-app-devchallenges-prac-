@@ -37,3 +37,15 @@
   top: 13px;
   left: 15px;
 }
+
+.searched-cities {
+  margin-top: 2.375em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.btn--city .material-icons-round {
+  display: none;
+}
