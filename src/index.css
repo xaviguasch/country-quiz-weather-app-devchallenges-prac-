@@ -58,6 +58,8 @@
 
   --clr-white-text: hsla(0, 0%, 95%, 1);
 
+  --clr-yellow: hsla(53, 100%, 70%, 1);
+
   /* Backgrounds */
   --clr-greyish-blue-bg: hsla(234, 32%, 17%, 1);
   --clr-deep-dark-blue-bg: hsla(248, 35%, 8%, 1);
@@ -136,6 +138,28 @@ ul {
 .sdi__units__additional {
   color: var(--clr-grey-1-text);
   font-size: var(--fs-32);
+}
+
+.signature__text {
+  color: var(--clr-grey-2-text);
+  font-size: var(--fs-14);
+}
+
+/* ================== */
+/* Links */
+/* ================== */
+.signature__link:link {
+  color: var(--clr-grey-2-text);
+  font-weight: var(--fw-bold);
+}
+
+.signature__link:hover,
+.signature__link:focus {
+  opacity: 0.5;
+}
+
+.signature__link:visited {
+  color: var(--clr-yellow);
 }
 
 /* ================== */

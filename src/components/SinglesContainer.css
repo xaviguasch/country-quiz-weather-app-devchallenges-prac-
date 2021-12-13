@@ -7,7 +7,7 @@
 }
 
 .sc__container {
-  margin-top: 2em;
+  margin: 2em auto 6em;
 
   display: flex;
   flex-direction: column;

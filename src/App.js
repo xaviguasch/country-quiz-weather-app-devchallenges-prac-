@@ -102,6 +102,16 @@ function App() {
           )}
           <DailiesContainer weatherArr={weather} />
           <SinglesContainer weatherData={weather} />
+
+          <div className='signature'>
+            <p className='signature__text'>
+              created by{' '}
+              <a className='signature__link' href='https://github.com/xaviguasch'>
+                Xavi Guasch
+              </a>{' '}
+              - devChallenges.io
+            </p>
+          </div>
         </div>
       ) : (
         <h2>loading local weather data...</h2>
