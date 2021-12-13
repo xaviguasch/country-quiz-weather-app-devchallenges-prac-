@@ -57,7 +57,7 @@ const Search = ({ onSearchSubmit, onCityClick, onCloseSearchClick, cities }) => 
               {' '}
               <button className='btn btn--city' onClick={handleCityBtnClick}>
                 <span>{city}</span>
-                <span class='material-icons-round'>chevron_right</span>
+                <span className='material-icons-round'>chevron_right</span>
               </button>
             </li>
           ))}

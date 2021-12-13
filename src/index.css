@@ -147,6 +147,11 @@ ul {
   font-size: var(--fs-14);
 }
 
+.loading-text {
+  color: var(--clr-white-text);
+  font-weight: var(--fw-medium);
+}
+
 /* ================== */
 /* Links */
 /* ================== */

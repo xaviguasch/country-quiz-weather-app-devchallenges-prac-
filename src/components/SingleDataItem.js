@@ -20,7 +20,12 @@ const SingleDataItem = ({
           <span className='sdi__units__additional sdi__units__special'>{units}</span>
         )}
       </div>
-      {wind_direction_compass && <p>{wind_direction_compass}</p>}
+      {wind_direction_compass && (
+        <div className='wind-data'>
+          <span className='material-icons-round'>near_me</span>{' '}
+          <span>{wind_direction_compass}</span>
+        </div>
+      )}
     </div>
   )
 }

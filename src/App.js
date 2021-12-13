@@ -114,7 +114,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <h2>loading local weather data...</h2>
+        <h2 className='loading-text'>loading local weather data...</h2>
       )}
     </div>
   )

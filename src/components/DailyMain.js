@@ -81,7 +81,7 @@ const DailyMain = ({ weatherData, onSearchClick }) => {
           <span>{formatedDate}</span>
         </p>
         <p className='main-content__location'>
-          <span class='material-icons-round'>place</span>
+          <span className='material-icons-round'>place</span>
           <span className='main-content__location__text'>{title}</span>
         </p>
       </div>

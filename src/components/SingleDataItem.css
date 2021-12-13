@@ -15,3 +15,10 @@
 .sdi__units__special {
   margin-left: 0.5em;
 }
+
+.wind-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
